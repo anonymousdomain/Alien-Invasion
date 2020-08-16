@@ -16,12 +16,12 @@ class AlienInvasion:
         pygame.init()
         self.settings = Settings()
         # full screen display
-        #self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+        # self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         """custumized display 1200 by 600"""
         self.screen = pygame.display.set_mode(
-        (self.settings.screen_width, self.settings.screen_height))
-        #self.settings.screen_width = self.screen.get_rect().width
-        #self.settings.screen_height = self.screen.get_rect().height
+            (self.settings.screen_width, self.settings.screen_height))
+        # self.settings.screen_width = self.screen.get_rect().width
+        # self.settings.screen_height = self.screen.get_rect().height
         self.stats = GameStats(self)
         self.ship = Ship(self)
         self.sb = Scoreboard(self)
@@ -176,8 +176,8 @@ class AlienInvasion:
 
     def _change_fleet_direction(self):
         for alien in self.aliens.sprites():
-            alien.rect.y += self.settings.fleet_dropdown_speed
-            self.settings.fleet_direction *= -1
+                alien.rect.y += self.settings.fleet_dropdown_speed
+        self.settings.fleet_direction *= -1
 
     def _ship_hit(self):
         """responed to the ship being hit by alien"""
